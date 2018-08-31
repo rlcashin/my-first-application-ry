@@ -32,19 +32,19 @@ public abstract class AbstractBoosterApplicationTest {
            .get(GREETING_PATH)
            .then()
            .statusCode(200)
-           .body("content", is(String.format(Greeting.FORMAT, "Good day")));
+           .body("content", is(String.format(Greeting.FORMAT, "World")));
     }
 
     @Test
     public void testGreetingEndpointWithNameParameter() {
         given()
            .baseUri(baseURI())
-           .param("name", "Mr Cashin")
+           .param("name", "James")
            .when()
            .get(GREETING_PATH)
            .then()
            .statusCode(200)
-           .body("content", is(String.format(Greeting.FORMAT, "Mr Cashin")));
+           .body("content", is(String.format(Greeting.FORMAT, "Jame")));
     }
 
     protected abstract String baseURI();
