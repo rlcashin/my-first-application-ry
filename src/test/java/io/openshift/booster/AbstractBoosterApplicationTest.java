@@ -39,12 +39,12 @@ public abstract class AbstractBoosterApplicationTest {
     public void testGreetingEndpointWithNameParameter() {
         given()
            .baseUri(baseURI())
-           .param("name", "James")
+           .param("name", "Ryan")
            .when()
            .get(GREETING_PATH)
            .then()
            .statusCode(200)
-           .body("content", is(String.format(Greeting.FORMAT, "Jame")));
+           .body("content", is(String.format(Greeting.FORMAT, "Ryan")));
     }
 
     protected abstract String baseURI();
